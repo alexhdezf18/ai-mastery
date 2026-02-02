@@ -5,4 +5,5 @@ __pycache__/
 *.xlsx
 .env
 env/
+venv/
 ia_mastery/
