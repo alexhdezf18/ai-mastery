@@ -1,6 +1,10 @@
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
+from tensorflow.keras.layers import Conv2D
+from tensorflow.keras.layers import MaxPooling2D
+from tensorflow.keras.layers import Flatten
+from tensorflow.keras.layers import Dense
 
 print("Cargando dataset...")
 fashion_mnist = tf.keras.datasets.fashion_mnist
@@ -9,8 +13,14 @@ fashion_mnist = tf.keras.datasets.fashion_mnist
 X_train = X_train / 255.0
 X_test = X_test / 255.0
 
-X_train.reshape(-1, 28, 28, 1)                                                                                       
-X_test.reshape(-1, 28, 28, 1)                                                                                       
+X_train.reshape(-1, 28, 28, 1)   
+X_test.reshape(-1, 28, 28, 1)
+
+Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(28, 28, 1))
+MaxPooling2D(pool_size=(2, 2))
+Flatten()
+Dense(units=64, activation='relu')
+
 
 print(f"Forma de los datos de entrenamiento: {X_train.shape}")
 print(f"Forma de los datos de prueba: {X_test.shape}")
